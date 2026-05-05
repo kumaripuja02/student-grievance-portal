@@ -1,0 +1,158 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: linear-gradient(135deg, #0f3460, #533483);
+  padding: 16px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.navbar h1 { font-size: 20px; }
+.navbar-right { display: flex; align-items: center; gap: 16px; }
+.navbar span { font-size: 14px; opacity: 0.9; }
+.logout-btn {
+  padding: 8px 16px;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.4);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.logout-btn:hover { background: rgba(255,255,255,0.3); }
+
+.main { padding: 32px; max-width: 1200px; margin: 0 auto; }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.stat-card .number { font-size: 32px; font-weight: 700; color: #0f3460; }
+.stat-card .label { font-size: 13px; color: #666; margin-top: 4px; }
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f2f5;
+}
+.card-header h2 { font-size: 18px; color: #0f3460; }
+
+.filters { display: flex; gap: 12px; }
+.filters select {
+  padding: 8px 12px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  cursor: pointer;
+}
+.filters select:focus { border-color: #0f3460; }
+
+.grievance-list { display: flex; flex-direction: column; gap: 16px; }
+.grievance-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid #0f3460;
+}
+.grievance-card.Pending { border-left-color: #ffc107; }
+.grievance-card.In-Progress { border-left-color: #17a2b8; }
+.grievance-card.Resolved { border-left-color: #28a745; }
+.grievance-card.Rejected { border-left-color: #dc3545; }
+
+.grievance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+}
+.grievance-title { font-weight: 700; font-size: 16px; color: #0f3460; }
+.badge { padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+.badge.Pending { background: #fff3cd; color: #856404; }
+.badge.In-Progress { background: #d1ecf1; color: #0c5460; }
+.badge.Resolved { background: #d4edda; color: #155724; }
+.badge.Rejected { background: #f8d7da; color: #721c24; }
+
+.grievance-meta { font-size: 13px; color: #666; margin-bottom: 8px; }
+.grievance-desc { font-size: 14px; color: #444; margin-bottom: 12px; }
+
+.update-form {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr auto;
+  gap: 10px;
+  align-items: end;
+  margin-top: 12px;
+}
+.update-form label { display: block; margin-bottom: 4px; font-weight: 600; color: #333; font-size: 12px; }
+.update-form select, .update-form input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 2px solid #eee;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+}
+.update-form select:focus, .update-form input:focus { border-color: #0f3460; }
+.update-btn {
+  padding: 9px 20px;
+  background: linear-gradient(135deg, #0f3460, #533483);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.update-btn:hover { opacity: 0.9; }
+.delete-btn {
+  padding: 9px 16px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.delete-btn:hover { opacity: 0.9; }
+
+.grievance-footer {
+  font-size: 12px;
+  color: #999;
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.empty-state { text-align: center; padding: 60px; color: #999; }
+.empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+.hidden { display: none; }

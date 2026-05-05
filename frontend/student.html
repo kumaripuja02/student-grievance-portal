@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="css/student.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>🎓 Student Grievance Portal</h1>
+    <div class="navbar-right">
+      <span id="welcomeMsg">Welcome!</span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="number" id="totalCount">0</div>
+        <div class="label">Total Submitted</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="pendingCount">0</div>
+        <div class="label">Pending</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="progressCount">0</div>
+        <div class="label">In Progress</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="resolvedCount">0</div>
+        <div class="label">Resolved</div>
+      </div>
+    </div>
+
+    <!-- TABS -->
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('submit', this)">➕ Submit Grievance</div>
+      <div class="tab" onclick="switchTab('mygrievances', this)">📋 My Grievances</div>
+    </div>
+
+    <!-- SUBMIT FORM -->
+    <div id="submitSection">
+      <div class="card">
+        <h2>Submit a New Grievance</h2>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Grievance Title</label>
+            <input type="text" id="title" placeholder="Brief title of your grievance" />
+          </div>
+          <div class="form-group">
+            <label>Category</label>
+            <select id="category">
+              <option value="">Select category</option>
+              <option value="Academic">Academic</option>
+              <option value="Hostel">Hostel</option>
+              <option value="Infrastructure">Infrastructure</option>
+              <option value="Financial">Financial</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Priority</label>
+          <select id="priority">
+            <option value="Low">Low</option>
+            <option value="Medium" selected>Medium</option>
+            <option value="High">High</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Description</label>
+          <textarea id="description" placeholder="Describe your grievance in detail..."></textarea>
+        </div>
+        <button class="submit-btn" onclick="submitGrievance()">Submit Grievance</button>
+        <div id="submitMsg" class="message"></div>
+      </div>
+    </div>
+
+    <!-- MY GRIEVANCES -->
+    <div id="myGrievancesSection" class="hidden">
+      <div id="grievanceList" class="grievance-list"></div>
+    </div>
+
+  </div>
+
+  <script src="js/student.js"></script>
+</body>
+</html>

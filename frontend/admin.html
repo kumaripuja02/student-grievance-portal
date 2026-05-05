@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="css/admin.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <div class="navbar">
+    <h1>🛡️ Admin Dashboard</h1>
+    <div class="navbar-right">
+      <span id="welcomeMsg">Welcome!</span>
+      <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+  </div>
+
+  <div class="main">
+
+    <!-- STATS -->
+    <div class="stats">
+      <div class="stat-card">
+        <div class="number" id="totalCount">0</div>
+        <div class="label">Total Grievances</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="pendingCount">0</div>
+        <div class="label">Pending</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="progressCount">0</div>
+        <div class="label">In Progress</div>
+      </div>
+      <div class="stat-card">
+        <div class="number" id="resolvedCount">0</div>
+        <div class="label">Resolved</div>
+      </div>
+    </div>
+
+    <!-- GRIEVANCES CARD -->
+    <div class="card">
+      <div class="card-header">
+        <h2>📋 All Grievances</h2>
+        <div class="filters">
+          <select id="filterStatus" onchange="filterGrievances()">
+            <option value="">All Status</option>
+            <option value="Pending">Pending</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Resolved">Resolved</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+          <select id="filterCategory" onchange="filterGrievances()">
+            <option value="">All Categories</option>
+            <option value="Academic">Academic</option>
+            <option value="Hostel">Hostel</option>
+            <option value="Infrastructure">Infrastructure</option>
+            <option value="Financial">Financial</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+      </div>
+      <div id="grievanceList" class="grievance-list"></div>
+    </div>
+
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
