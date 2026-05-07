@@ -1,4 +1,4 @@
-const API = 'http://localhost:8000/api';
+const API = 'https://student-grievance-portal-1.onrender.com/api';
 const token = localStorage.getItem('token');
 const user = JSON.parse(localStorage.getItem('user') || '{}');
 if (!token) {

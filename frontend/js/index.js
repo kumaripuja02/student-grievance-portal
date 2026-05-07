@@ -1,5 +1,4 @@
-const API = 'http://localhost:8000/api';
-
+const API = 'https://student-grievance-portal-1.onrender.com/api';
 function switchTab(tab, el) {
   document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
   el.classList.add('active');
