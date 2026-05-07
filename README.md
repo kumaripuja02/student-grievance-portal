@@ -62,14 +62,7 @@ student-grievance-portal/
 └── package.json
 ```
 ## 🌐 Deployment Links
-
-### Frontend:
-
-
-
-### Backend API:
-
-
+https://student-grievance-portal-zeta.vercel.app/
 
 ---
 
