@@ -156,3 +156,63 @@ body {
 .empty-state { text-align: center; padding: 60px; color: #999; }
 .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
 .hidden { display: none; }
+
+/* ── Mobile Responsive ── */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .navbar h1 { font-size: 16px; }
+  .navbar-right { gap: 8px; }
+
+  .main { padding: 16px; }
+
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .stat-card { padding: 14px; }
+  .stat-card .number { font-size: 24px; }
+
+  .card { padding: 16px; }
+
+  .card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .filters {
+    width: 100%;
+  }
+  .filters select { flex: 1; }
+
+  .grievance-card { padding: 14px; }
+  .grievance-title { font-size: 14px; }
+  .grievance-meta { font-size: 11px; }
+
+  .update-form {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .update-form > div:nth-child(3) {
+    grid-column: span 2;
+  }
+  .update-form > div:last-child {
+    grid-column: span 2;
+    display: flex;
+    gap: 8px;
+  }
+  .update-btn, .delete-btn {
+    flex: 1;
+    padding: 10px;
+  }
+
+  .grievance-footer {
+    flex-direction: column;
+    gap: 4px;
+  }
+}
